@@ -1,5 +1,5 @@
-import numpy as np
 
+import numpy as np
 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
@@ -12,8 +12,8 @@ from flask import Flask, jsonify
 #################################################
 # Database Setup
 #################################################
-engine = create_engine("sqlite:///C:/Users/joshu/Desktop/Monash_Bootcamp/Module10/sqlalchemy-challenge/Resources/hawaii.sqlite")
-#engine = create_engine("sqlite:///../Resources/hawaii.sqlite")
+
+engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
 # reflect an existing database into a new model
 Base = automap_base()
@@ -167,7 +167,7 @@ def start_date(start):
 
     session.close()
 
-    # Create a dictionary from the row data and append to a list of precipitation_12_months
+    # Create a dictionary from the row data and append to a list of start_months
     start_months = []
     for min, max, avg in results:
         start_dict = {}
@@ -198,7 +198,7 @@ def start_end_date(start, end):
 
     session.close()
 
-    # Create a dictionary from the row data and append to a list of precipitation_12_months
+    # Create a dictionary from the row data and append to a list of start_end_months
     start_end_months = []
     for min, max, avg in results:
         start_dict = {}
